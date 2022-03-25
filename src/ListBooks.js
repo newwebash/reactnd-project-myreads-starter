@@ -5,9 +5,10 @@ class ListBooks extends Component {
     static propTypes = {
         title: propTypes.string.isRequired,
         books: propTypes.array.isRequired,
+        onNavToSearch: propTypes.func.isRequired,
     }
     render() {
-        const { title, books } = this.props
+        const { title, books, onNavToSearch } = this.props
 
         return (
             <div className="list-books">
@@ -166,7 +167,7 @@ class ListBooks extends Component {
             </div>
             </div>
             <div className="open-search">
-            <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+            <button onClick={() => onNavToSearch()}>Add a book</button>
             </div>
             </div>
         )
